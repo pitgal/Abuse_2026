@@ -1,3 +1,8 @@
 {
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "/opt/homebrew/opt/sdl2/include/SDL2/**",
+        "/opt/homebrew/opt/sdl2_mixer/include/SDL2/**"
+    ],
 }

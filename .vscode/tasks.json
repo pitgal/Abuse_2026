@@ -8,7 +8,7 @@
             "args": [
                 "-S", ".",
                 "-B", "build/debug",
-                "-DCMAKE_INSTALL_PREFIX=\${workspaceFolder}/build/debug/src",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/debug/src",
                 "-DCMAKE_BUILD_TYPE=Debug"
             ],
             "problemMatcher": ["$gcc"]
@@ -45,7 +45,7 @@
             "args": [
                 "-S", ".",
                 "-B", "build/release",
-                "-DCMAKE_INSTALL_PREFIX=\${workspaceFolder}/build/release/src",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/release/src",
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
             "problemMatcher": ["$gcc"]
