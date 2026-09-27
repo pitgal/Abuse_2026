@@ -9,7 +9,8 @@
                 "-S", ".",
                 "-B", "build/debug",
                 "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/debug/src",
-                "-DCMAKE_BUILD_TYPE=Debug"
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
             ],
             "problemMatcher": ["$gcc"]
         },
@@ -46,7 +47,8 @@
                 "-S", ".",
                 "-B", "build/release",
                 "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/release/src",
-                "-DCMAKE_BUILD_TYPE=Release"
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
             ],
             "problemMatcher": ["$gcc"]
         },
