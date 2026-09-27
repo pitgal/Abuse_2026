@@ -26,15 +26,6 @@
             "problemMatcher": ["$gcc"]
         },
         {
-            "label": "Install debug",
-            "type": "shell",
-            "command": "cmake",
-            "args": ["--install", "build/debug"],
-            "dependsOn": "Build debug",
-            "dependsOrder": "sequence",
-            "problemMatcher": ["$gcc"]
-        },
-        {
             "label": "Prepare debug",
             "type": "shell",
             "command": "test -f build/debug/.installed || (cmake --install build/debug && touch build/debug/.installed)",
@@ -64,15 +55,6 @@
             "dependsOrder": "sequence",
             "group": {"kind": "build", "isDefault": false},
             "presentation": {"reveal": "always"},
-            "problemMatcher": ["$gcc"]
-        },
-        {
-            "label": "Install release",
-            "type": "shell",
-            "command": "cmake",
-            "args": ["--install", "build/release"],
-            "dependsOn": "Build release",
-            "dependsOrder": "sequence",
             "problemMatcher": ["$gcc"]
         },
         {
