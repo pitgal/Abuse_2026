@@ -8,32 +8,35 @@
             "args": [
                 "-S", ".",
                 "-B", "build/debug",
-                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/debug/src",
+                "-DCMAKE_INSTALL_PREFIX=\${workspaceFolder}/build/debug/src",
                 "-DCMAKE_BUILD_TYPE=Debug"
             ],
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": ["$gcc"]
         },
         {
             "label": "Build debug",
             "type": "shell",
             "command": "cmake",
-            "args": [
-                "--build", "build/debug"
-            ],
+            "args": ["--build", "build/debug"],
             "dependsOn": "Configure debug",
             "dependsOrder": "sequence",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "presentation": {
-                "reveal": "always"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "group": {"kind": "build", "isDefault": true},
+            "presentation": {"reveal": "always"},
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Install debug",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--install", "build/debug"],
+            "dependsOn": "Build debug",
+            "dependsOrder": "sequence",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Prepare debug",
+            "dependsOn": "Install debug",
+            "dependsOrder": "sequence"
         },
         {
             "label": "Configure release",
@@ -42,32 +45,35 @@
             "args": [
                 "-S", ".",
                 "-B", "build/release",
-                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/release/src",
+                "-DCMAKE_INSTALL_PREFIX=\${workspaceFolder}/build/release/src",
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": ["$gcc"]
         },
         {
             "label": "Build release",
             "type": "shell",
             "command": "cmake",
-            "args": [
-                "--build", "build/release"
-            ],
+            "args": ["--build", "build/release"],
             "dependsOn": "Configure release",
             "dependsOrder": "sequence",
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            },
-            "presentation": {
-                "reveal": "always"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "group": {"kind": "build", "isDefault": false},
+            "presentation": {"reveal": "always"},
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Install release",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--install", "build/release"],
+            "dependsOn": "Build release",
+            "dependsOrder": "sequence",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Prepare release",
+            "dependsOn": "Install release",
+            "dependsOrder": "sequence"
         }
     ]
 }
