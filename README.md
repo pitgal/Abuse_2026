@@ -152,7 +152,8 @@ git clone https://github.com/MBerguer/Abuse_2026.git
 cd Abuse_2026
 
 # 3. Build and install the macOS application bundle
-cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX="$PWD/build/src" -DCMAKE_BUILD_TYPE=Release
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX="$PWD/build/src" -DCMAKE_BUILD_TYPE=Debug
 cmake --build build -j$(sysctl -n hw.ncpu)
 cmake --install build
 

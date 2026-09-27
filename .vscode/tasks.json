@@ -1,0 +1,65 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Configure debug",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S", ".",
+                "-B", "build",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/src",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Build debug",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "build"
+            ],
+            "dependsOn": "Configure debug",
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Configure release",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S", ".",
+                "-B", "build",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/src",
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Build release",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "build"
+            ],
+            "dependsOn": "Configure release",
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
