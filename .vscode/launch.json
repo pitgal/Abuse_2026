@@ -11,16 +11,10 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-            "linux": {
-                "MIMode": "gdb"
-            },
-            "osx": {
-                "MIMode": "lldb"
-            },
-            "windows": {
-                "MIMode": "gdb"
-            },
-            "preLaunchTask": "Build debug"
+            "linux": {"MIMode": "gdb"},
+            "osx": {"MIMode": "lldb"},
+            "windows": {"MIMode": "gdb"},
+            "preLaunchTask": "Prepare debug"
         },
         {
             "name": "Run release",
@@ -32,16 +26,10 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-            "linux": {
-                "MIMode": "gdb"
-            },
-            "osx": {
-                "MIMode": "lldb"
-            },
-            "windows": {
-                "MIMode": "gdb"
-            },
-            "preLaunchTask": "Build release"
+            "linux": {"MIMode": "gdb"},
+            "osx": {"MIMode": "lldb"},
+            "windows": {"MIMode": "gdb"},
+            "preLaunchTask": "Prepare release"
         }
     ]
 }
