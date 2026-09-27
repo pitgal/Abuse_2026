@@ -36,8 +36,11 @@
         },
         {
             "label": "Prepare debug",
-            "dependsOn": "Install debug",
-            "dependsOrder": "sequence"
+            "type": "shell",
+            "command": "test -f build/debug/.installed || (cmake --install build/debug && touch build/debug/.installed)",
+            "dependsOn": "Build debug",
+            "dependsOrder": "sequence",
+            "problemMatcher": []
         },
         {
             "label": "Configure release",
@@ -74,8 +77,11 @@
         },
         {
             "label": "Prepare release",
-            "dependsOn": "Install release",
-            "dependsOrder": "sequence"
+            "type": "shell",
+            "command": "test -f build/release/.installed || (cmake --install build/release && touch build/release/.installed)",
+            "dependsOn": "Build release",
+            "dependsOrder": "sequence",
+            "problemMatcher": []
         }
     ]
 }
