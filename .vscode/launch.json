@@ -5,7 +5,7 @@
             "name": "Run debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/src/abuse.app/Contents/MacOS/abuse",
+            "program": "${workspaceFolder}/build/debug/src/abuse.app/Contents/MacOS/abuse",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -15,28 +15,32 @@
                 "MIMode": "gdb"
             },
             "osx": {
-                "MIMode": "lldb",
-                "targetArchitecture": "arm"
+                "MIMode": "lldb"
             },
             "windows": {
                 "MIMode": "gdb"
             },
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
             "preLaunchTask": "Build debug"
         },
         {
             "name": "Run release",
-            "type": "lldb",
+            "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/src/abuse.app/Contents/MacOS/abuse",
+            "program": "${workspaceFolder}/build/release/src/abuse.app/Contents/MacOS/abuse",
             "args": [],
+            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "linux": {
+                "MIMode": "gdb"
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "MIMode": "gdb"
+            },
             "preLaunchTask": "Build release"
         }
     ]

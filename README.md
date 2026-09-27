@@ -152,14 +152,23 @@ git clone https://github.com/MBerguer/Abuse_2026.git
 cd Abuse_2026
 
 # 3. Build and install the macOS application bundle
-cmake -S . -B build -DCMAKE_INSTALL_PREFIX="$PWD/build/src" -DCMAKE_BUILD_TYPE=Release
-cmake -S . -B build -DCMAKE_INSTALL_PREFIX="$PWD/build/src" -DCMAKE_BUILD_TYPE=Debug
-cmake --build build -j$(sysctl -n hw.ncpu)
-cmake --install build
+cmake -S . -B build/release -DCMAKE_INSTALL_PREFIX="$PWD/build/release/src" -DCMAKE_BUILD_TYPE=Release
+cmake --build build/release -j$(sysctl -n hw.ncpu)
+cmake --install build/release
 
 # 4. Launch and play!
 open abuse.app
 # (or run directly from terminal: ./abuse.app/Contents/MacOS/abuse)
+```
+
+
+
+For a debug build:
+
+```bash
+cmake -S . -B build/debug -DCMAKE_INSTALL_PREFIX="$PWD/build/debug/src" -DCMAKE_BUILD_TYPE=Debug
+cmake --build build/debug -j$(sysctl -n hw.ncpu)
+cmake --install build/debug
 ```
 
 ### 🐧 Linux (Ubuntu / Debian / Fedora / Arch)

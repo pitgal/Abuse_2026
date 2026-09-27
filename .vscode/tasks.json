@@ -7,18 +7,20 @@
             "command": "cmake",
             "args": [
                 "-S", ".",
-                "-B", "build",
-                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/src",
+                "-B", "build/debug",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/debug/src",
                 "-DCMAKE_BUILD_TYPE=Debug"
             ],
-            "problemMatcher": []
+            "problemMatcher": [
+                "$gcc"
+            ]
         },
         {
             "label": "Build debug",
             "type": "shell",
             "command": "cmake",
             "args": [
-                "--build", "build"
+                "--build", "build/debug"
             ],
             "dependsOn": "Configure debug",
             "dependsOrder": "sequence",
@@ -29,7 +31,9 @@
             "presentation": {
                 "reveal": "always"
             },
-            "problemMatcher": []
+            "problemMatcher": [
+                "$gcc"
+            ]
         },
         {
             "label": "Configure release",
@@ -37,18 +41,20 @@
             "command": "cmake",
             "args": [
                 "-S", ".",
-                "-B", "build",
-                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/src",
+                "-B", "build/release",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/build/release/src",
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
-            "problemMatcher": []
+            "problemMatcher": [
+                "$gcc"
+            ]
         },
         {
             "label": "Build release",
             "type": "shell",
             "command": "cmake",
             "args": [
-                "--build", "build"
+                "--build", "build/release"
             ],
             "dependsOn": "Configure release",
             "dependsOrder": "sequence",
@@ -59,7 +65,9 @@
             "presentation": {
                 "reveal": "always"
             },
-            "problemMatcher": []
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
