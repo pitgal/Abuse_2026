@@ -784,7 +784,10 @@ void main_menu()
                     else if (next_ev.message.id == ID_QUIT)
                     {
                         if (confirm_quit())
+                        {
+                            the_game->end_session();
                             stop_menu = 1;
+                        }
                         else
                             start.get_time();
                     }

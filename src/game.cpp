@@ -2105,8 +2105,12 @@ void Game::step()
     main_menu(); // AR this is a main menu LOOP, it handles events and rendering inside !
   }
 
-  if ((key_down('x') || key_down(JK_F4)) && (key_down(JK_ALT_L) || key_down(JK_ALT_R)) && confirm_quit())
-    finished = true;
+  if ((key_down('x') || key_down(JK_F4)) &&
+      (key_down(JK_ALT_L) || key_down(JK_ALT_R)))
+  {
+      if (confirm_quit())
+          end_session();
+  }
 }
 
 extern void *current_demo;
